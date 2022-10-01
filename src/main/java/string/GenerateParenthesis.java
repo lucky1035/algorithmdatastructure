@@ -10,7 +10,7 @@ public class GenerateParenthesis {
         String str = "())(()";
         System.out.println(new GenerateParenthesis().valid(str.toCharArray()));
 
-        List<String> ress = new GenerateParenthesis().generateParenthesis(3);
+        List<String> ress = new GenerateParenthesis().generateParenthesis(4);
         for (String res : ress){
             System.out.println(res);
         }
