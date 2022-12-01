@@ -36,19 +36,20 @@ public class Permute {
 
     private List<List<Integer>>  insert(List<Integer> parame, int a) {
         List results = new ArrayList<List<Integer>>();
-        for(int i = 0 ; i< parame.size();i++){
+        for(int i = 0 ; i<= parame.size();i++){
             List<Integer> result = new ArrayList<>(parame);
             result.add(i,a);
             results.add(result);
+            if(i<parame.size()&&a==result.get(i+1)){
+                i++;
+            }
         }
-        List<Integer> lastResult = new ArrayList<Integer>(parame);
-        lastResult.add(parame.size(),a);
-        results.add(lastResult);
+
         return results;
     }
 
     public static void main(String[] args) {
-        int[] a = {1,2,3};
+        int[] a = {1,2,1};
         List<List<Integer>> results = new Permute().permute(a);
         for(List<Integer> result : results){
             System.out.println(result);
