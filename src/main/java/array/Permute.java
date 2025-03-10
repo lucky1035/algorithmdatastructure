@@ -1,13 +1,16 @@
 package array;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Permute {
     public List<List<Integer>> permute(int[] nums) {
+
         if(nums.length==0){
             return  null;
         }
+        Arrays.sort(nums);
         return assemble(nums,nums.length);
     }
 
